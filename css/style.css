@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+*,*::before, *::after{
+  box-sizing: inherit;
+}
+  
+a {
+  text-decoration: none;
+  color: inherit;  
+  display: inline-block;
+}
+  
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  
+h1, h2, h3, h4, h5, h6{
+  margin: 0; 
+}
+p {
+  margin: 0;
+}
+body{
+ margin: 0;
+}
+.wrapper{
+ background: url(../assets/home.png);
+ background-position: 50%;
+ background-repeat: no-repeat;
+ background-size: cover;
+ min-height: 100vh;
+}
+
+.header__wraper,
+.main__wraper,
+.footer__wraper{
+ max-width: 1200px;
+ width: 100%;
+ margin: 0 auto;
+}
+.footer__wraper{
+ display: flex;
+ margin-top: 10px; 
+}
+.header__img-wraper{
+ display: flex;
+ justify-content: space-between;
+ padding-top: 20px;
+ max-height: 340px;
+ height: 100%;
+}
+.header__img-item{
+ min-width: 10px;
+ width: 100%;
+ max-height: 300px;
+ height: 100%;
+ margin: 0 20px;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+.main__btn-wraper,
+.main__inner{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.main__btn-wraper{
+ margin: 0 20px;
+ margin-top: 20px;
+}
+.main__inner{
+ max-width: 800px;
+ width: 100%;
+ margin-right: 20px;
+}
+.main__item a{
+ padding: 8px;
+ background-color: #0000002b;
+ border: 1px solid #ffecc8;
+ border-radius: 4px;
+ color: #dadada;
+}
+.main__item a:hover{
+ color: #fff;
+}
+.main__btn-inner,
+.main__btn{
+ max-width: 150px;
+ width: 100%;
+ border: none;
+ background-color: #ff000017;
+ border-radius: 5px;
+ color: #d4d4d4;
+}
+.main__btn:hover{
+ color: #fff;  
+}
+.main__btn{
+box-sizing:border-box;
+padding: 8px;
+cursor: pointer;
+}
+.stage{
+ margin: 0 20px;
+ max-width: 120px;
+ width: 100%;
+ border-radius: 10px;
+ border: 1px solid;
+ padding-top: 10px;
+ padding: 10px 20px 0 20px;
+ height: 210px;
+ text-align: center;
+}
+.first__stage-title,
+.second__stage-title,
+.third__stage-title{
+ color:white;
+ margin-bottom: 10px;
+}
+
+.first__stage-num,
+.second__stage-num,
+.third__stage-num{
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 20px;
+ color:white;
+}
+
+.blue__card,
+.brown__card,
+.green__card{
+ width: 20px;
+ height: 20px;
+ border-radius:50%;
+ text-align: center;
+ line-height: 20px;
+}
+.blue__card{
+ background-color:#166dff61;
+}
+.brown__card{
+ background-color:#8f3f017d;
+}
+.green__card{
+ background-color:#4caf507d;
+}
+.mythic__card-wrapper,
+.random__card-wrapper{
+ max-width: 190px;
+ width:100%;  
+}
+.mythic__card-img,
+.random__card-img{
+ max-width: 190px;
+ width:100%;
+ max-height: 220px;
+ height:100%;
+ border-radius: 10px;
+ cursor: pointer;
+}
+.random__card-wrapper{
+    margin-left: 20px;
+}
