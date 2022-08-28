@@ -64,12 +64,8 @@ function ancientFu(){
 }
 ancientFu();
 
- function shuffle(array) {   //перемешиваем массив алгоритм под названием Тасование Фишера — Йетса.
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let t = array[i]; array[i] = array[j]; array[j] = t;
-      return t;
-    }
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
 }
 
 function sumInnerHTML(card, sum){ // считаем сколько зеленых, коричневых и синих
@@ -264,6 +260,7 @@ if(arrEasiest.length === 0){
     resetVariables();
     footerWraper.classList.remove('activ__visibil');
     mainBtn.style.outline = 'none';
+    location.reload();
 }
 }
  mythicCardWrapper.addEventListener('click', ()=> {
