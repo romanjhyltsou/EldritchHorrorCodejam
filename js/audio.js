@@ -11,7 +11,7 @@ window.onload = function() {
 };
 
 function switchTreck (numTreck) {
-    audio.src = '/' + playlist[numTreck];
+    audio.src = playlist[numTreck];
     audio.currentTime = 0;
     audio.play();
 }
