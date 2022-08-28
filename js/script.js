@@ -256,7 +256,7 @@ function level(){
             pushArrHard(blueCards, sumBlueCard);
             pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
         }
-        // console.log(arrEasiest);
+       /*  console.log(arrEasiest); */
     });
    
  });
@@ -285,7 +285,7 @@ function getStage(arr, stage){
         }
     }
 }
-function cardToInner(){ // таблица
+function cardToInner(){ // таблица    
 if(+firstStage[firstStageArr[0]].innerHTML > 0){
 getStage(arrEasiest, firstStage[firstStageArr[0]] );
 }else if(+firstStage[firstStageArr[1]].innerHTML > 0){
