@@ -163,7 +163,7 @@ function level(){
         ancientFu();
 
         let target = e.target;
-        
+
         mainItem.forEach((item) => {
             item.classList.remove('activ__border');
             item.style.outline = "1px solid #ffecc8";
@@ -315,5 +315,17 @@ if(arrEasiest.length === 0){
     randomCardImg.classList.remove('activ__unit');
     cardToInner(); // таблица
  });
+
+console.log(`
+1.На выбор предоставляется минимум одна карта древнего (максимум 4) +5-20 баллов(по 5 за каждого древнего)\n 
+2.На выбор предоставляется несколько уровней сложности (максимум 5) +5-25 баллов(по 5 за каждый уровень сложности\n
+3.Карты замешиваются согласно правилам игры +40 баллов\n 
+4.Есть трекер текущего состояния колоды +20 баллов\n 
+Выполненны все пункты. Score: 100 /100;\n
+Для связи со мной: \n
+
+Телеграмм: @Roma9858\n
+
+discord: romanjhyltsou#6635\n`);
 
 });
