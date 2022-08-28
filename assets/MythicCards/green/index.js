@@ -16,6 +16,9 @@ import green15 from './green15.png';
 import green16 from './green16.png';
 import green17 from './green17.png';
 import green18 from './green18.png';
+import green19 from './green19.png';
+import green20 from './green20.png';
+import green21 from './green21.png';
 
 const cards = {
   green1,
@@ -36,6 +39,9 @@ const cards = {
   green16,
   green17,
   green18,
+  green19,
+  green20,
+  green21,
 };
 
 export default cards;

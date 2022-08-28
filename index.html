@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--   <link href="assets/favicon.ico" rel="shortcut icon" /> -->
+  <link href="assets/iconicon.ico" rel="shortcut icon" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Eldritch Horror</title>
@@ -14,10 +14,10 @@
         <div class="header__wraper">
 
           <div class="header__img-wraper">
-              <img class="header__img-item" src="assets/ancients/Azathoth.png" alt="">
-              <img class="header__img-item" src="assets/ancients/Cthulthu.png" alt="">
-              <img class="header__img-item" src="assets/ancients/IogSothoth.png" alt="">
-              <img class="header__img-item" src="assets/ancients/ShubNiggurath.png" alt="">
+              <img id = 'azathoth' class="header__img-item " src="assets/ancients/Azathoth.png" alt=""> <!--  activ__border    -->          
+              <img id = 'cthulhu' class="header__img-item" src="assets/ancients/Cthulthu.png" alt="">
+              <img id = 'iogSothoth' class="header__img-item" src="assets/ancients/IogSothoth.png" alt="">
+              <img id = 'shubNiggurath' class="header__img-item" src="assets/ancients/ShubNiggurath.png" alt="">
           </div>
 
         </div>
@@ -30,24 +30,24 @@
 
             <ul class="main__inner">
               <li class="main__item">
-                <a href="#">очень легкий</a>
+                <a class="easiest"  href="#">очень легкий</a>
               </li>
-              <li class="main__item">
-                <a href="#">легкий уровень</a>
+              <li class="main__item ">
+                <a class="easy" href="#">легкий уровень</a>
               </li>
-              <li class="main__item">
-                <a href="#">средний уровень</a>
+              <li class="main__item ">
+                <a class="normal" href="#">средний уровень</a>
               </li>
-              <li class="main__item">
-                <a href="#">высокий уровень</a>
+              <li class="main__item ">
+                <a class="hard" href="#">высокий уровень</a>
               </li>
-              <li class="main__item">
-                <a href="#">очень высокий</a>
+              <li class="main__item ">
+                <a class="hardest" href="#">очень высокий</a>
               </li>
             </ul>
 
             <div class="main__btn-inner">
-              <button class="main__btn"> мешать колоду </button>
+              <button disabled = '' class="main__btn"> мешать колоду </button>
             </div>
 
         </div>
@@ -63,27 +63,27 @@
           <div class="first__stage-wrapper">
             <div class="first__stage-title">Первая стадия</div>
               <div class="first__stage-num">
-                <div class="blue__card"><span>1</span></div>
-                <div class="brown__card"><span>2</span></div>
-                <div class="green__card"><span>3</span></div>
+                <div class="green__card"><span class="first__stage green">0</span></div>
+                <div class="brown__card"><span class="first__stage brown">0</span></div>
+                <div class="blue__card"><span class=" first__stage blue">0</span></div>
               </div>
           </div>
 
           <div class="second__stage-wrapper">
             <div class="second__stage-title">Вторая стадия</div>
             <div class="second__stage-num">
-              <div class="blue__card"><span>1</span></div>
-              <div class="brown__card"><span>2</span></div>
-              <div class="green__card"><span>3</span></div>
+              <div class="green__card"><span class="second__stage green">0</span></div>
+              <div class="brown__card"><span class="second__stage brown">0</span></div>
+              <div class="blue__card"><span class="second__stage blue">0</span></div>
             </div>
           </div>
 
           <div class="third__stage-wrapper">
             <div class="third__stage-title">Третья стадия</div>
             <div class="third__stage-num">
-              <div class="blue__card"><span>1</span></div>
-              <div class="brown__card"><span>2</span></div>
-              <div class="green__card"><span>3</span></div>
+              <div class="green__card"><span class="third__stage green">0</span></div>
+              <div class="brown__card"><span class="third__stage brown">0</span></div>
+              <div class="blue__card"><span class="third__stage blue">0</span></div>
             </div>
           </div>
 
@@ -94,12 +94,16 @@
         </div>
 
         <div class="random__card-wrapper">
-          <img class="random__card-img" src="assets/MythicCards/blue/blue1.png" alt="randomСard">
+          <img class="random__card-img activ__unit" src="" alt="randomСard"><!-- assets/MythicCards/blue/blue1.png -->
         </div>
 
       </div>
     </footer>
+    <audio id="audio" volume ='100' allow="autoplay" src="/ger.mp3"></audio>
+    <div id="controls">
+  </div>
     <script src="js/script.js" type="module"></script>
+    <script src="js/audio.js" type="module"></script>
   </div>
 </body>
 </html>

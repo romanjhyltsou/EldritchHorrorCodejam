@@ -43,6 +43,12 @@ body{
  margin: 0 auto;
 }
 .footer__wraper{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0s;
+ /*  transform: translateY(-100%); */
+}
+.footer__wraper{
  display: flex;
  margin-top: 10px; 
 }
@@ -60,6 +66,7 @@ body{
  height: 100%;
  margin: 0 20px;
  border-radius: 10px;
+ border: 1px solid #ffffff00;
  cursor: pointer;
 }
 
@@ -81,7 +88,8 @@ body{
 .main__item a{
  padding: 8px;
  background-color: #0000002b;
- border: 1px solid #ffecc8;
+ outline: 1px solid #ffecc8;
+ /* border: 1px solid #ffecc8; */
  border-radius: 4px;
  color: #dadada;
 }
@@ -166,4 +174,29 @@ cursor: pointer;
 }
 .random__card-wrapper{
     margin-left: 20px;
+}
+.activ__border{
+  outline: 1px solid red;
+}
+.activ__unit{
+  display: none;
+}
+.activ__visibil{
+  visibility: inherit;
+  opacity: 1;
+  transition: 0.7s;
+  transform: translateY(0);
+}
+
+.audio-track {
+  width: 150px;
+  height: 3px;
+  background-color: #dddddd;
+  margin: 20px 0
+}
+
+.time {
+  width: 0;
+  height: 3px;
+  background-color: #474747
 }
