@@ -190,42 +190,12 @@ function level(){
                 pushArrEasiest(brownCards, sumBrownCard);
                 pushArrNormal(blueCards, sumBlueCard);
                 pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 1){
-                pushArrEasiest(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
-                pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 2){
-                pushArrNormal(greenCards, sumGreenCard );
-                pushArrEasiest(brownCards, sumBrownCard);
-                pushArrEasiest(blueCards, sumBlueCard);
-                pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 3){
-                pushArrEasiest(greenCards, sumGreenCard );
-                pushArrEasiest(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
-                pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.normal')){
             if(activeAncient === 0){
                 pushArrHard(greenCards, sumGreenCard );
                 pushArrNormal(brownCards, sumBrownCard);
                 pushArrEasiest(blueCards, sumBlueCard);
-                pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 1){
-                pushArrNormal(greenCards, sumGreenCard );
-                pushArrHard(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
-                pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 2){
-                pushArrEasiest(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrHard(blueCards, sumBlueCard);
-                pushArrHard(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 3){
-                pushArrHard(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrHard(blueCards, sumBlueCard);
                 pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.hard')){
@@ -234,21 +204,6 @@ function level(){
                 pushArrNormal(brownCards, sumBrownCard);
                 pushArrHard(blueCards, sumBlueCard);
                 pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 1){
-                pushArrHard(greenCards, sumGreenCard );
-                pushArrHard(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
-                pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 2){
-                pushArrNormal(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrHard(blueCards, sumBlueCard);
-                pushArrHard(brownCards,(allSumCard - arrEasiest.length));
-            }else if(activeAncient === 3){
-                pushArrHard(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
-                pushArrHard(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.hardest')){
             pushArrHard(greenCards, sumGreenCard );
