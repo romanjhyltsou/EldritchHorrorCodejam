@@ -225,17 +225,19 @@ function mixTable(){ // таблица
         shuffle(thirdStageArr);
     }
 }
-
+let randImg;
 function getStage(arr, stage){
-    stage.innerHTML = `${+stage.innerHTML - 1}`;
     for(let i = 0; i < arrEasiest.length; i++){
         if(arr[i].color === stage.classList[1]){
-            randomCardImg.src = `assets/MythicCards/${arr[i].color}/${arr[i].id}.png`;
+            randImg = `assets/MythicCards/${arr[i].color}/${arr[i].id}.png`;
             arr.splice(i,1);
             break;
         }
     }
+    randomCardImg.src = randImg;
+    stage.innerHTML = `${+stage.innerHTML - 1}`;
 }
+
 function cardToInner(){ // таблица    
 if(+firstStage[firstStageArr[0]].innerHTML > 0){
 getStage(arrEasiest, firstStage[firstStageArr[0]] );
