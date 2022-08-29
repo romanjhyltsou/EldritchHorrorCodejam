@@ -74,51 +74,27 @@ function sumInnerHTML(card, sum){ // считаем сколько зелены�
     });
     return sum;
 }
-
-function pushArrEasiest(cards, sum){ // пушим все easy в массив
-        let a = [];
-        for(let i = 0; i < cards.length; i++){
-            if(cards[i].difficulty === 'easy'){
-                    a.push(cards[i]);
-                    shuffle(a);
-            } 
-        }
-        for(let i = 0; i < sum; i++){
-            if(a[i] !== undefined){
-                arrEasiest.push(a[i]);
-            } 
-        }
-}
-
-function pushArrNormal(cards,sum){ // пушим все normal в массив
+function pushArrEasiest(cards, sum){
     let a = [];
     for(let i = 0; i < cards.length; i++){
-        if(cards[i].difficulty === 'normal'){
+        if(cards[i].difficulty === 'easy'){
                 a.push(cards[i]);
                 shuffle(a);
-        } 
+        }else if(cards[i].difficulty === 'normal'){
+            a.push(cards[i]);
+            shuffle(a);
+        }else if(cards[i].difficulty === 'hard'){
+            a.push(cards[i]);
+            shuffle(a);
+        }
     }
     for(let i = 0; i < sum; i++){
         if(a[i] !== undefined){
             arrEasiest.push(a[i]);
-        }
+        } 
     }
 }
 
-function pushArrHard(cards,sum){ // пушим все hard в массив
-    let a = [];
-    for(let i = 0; i < cards.length; i++){
-        if(cards[i].difficulty === 'hard'){
-                a.push(cards[i]);
-                shuffle(a);
-        } 
-    }
-    for(let i = 0; i < sum; i++){
-        if(a[i] !== undefined){
-            arrEasiest.push(a[i]);
-        }
-    }
-}
 function resetVariables(){
     arrEasiest = [];
     sumGreenCard = 0;
@@ -179,33 +155,33 @@ function level(){
             pushArrEasiest(greenCards, sumGreenCard );
             pushArrEasiest(brownCards, sumBrownCard);
             pushArrEasiest(blueCards, sumBlueCard);
-            pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
+            pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
         }else if(target.matches('.easy')){
             if(activeAncient === 0){
-                pushArrNormal(greenCards, sumGreenCard );
+                pushArrEasiest(greenCards, sumGreenCard );
                 pushArrEasiest(brownCards, sumBrownCard);
-                pushArrNormal(blueCards, sumBlueCard);
+                pushArrEasiest(blueCards, sumBlueCard);
                 pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.normal')){
             if(activeAncient === 0){
-                pushArrHard(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
+                pushArrEasiest(greenCards, sumGreenCard );
+                pushArrEasiest(brownCards, sumBrownCard);
                 pushArrEasiest(blueCards, sumBlueCard);
                 pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.hard')){
             if(activeAncient === 0){
-                pushArrHard(greenCards, sumGreenCard );
-                pushArrNormal(brownCards, sumBrownCard);
-                pushArrHard(blueCards, sumBlueCard);
-                pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
+                pushArrEasiest(greenCards, sumGreenCard );
+                pushArrEasiest(brownCards, sumBrownCard);
+                pushArrEasiest(blueCards, sumBlueCard);
+                pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
             }
         }else if(target.matches('.hardest')){
-            pushArrHard(greenCards, sumGreenCard );
-            pushArrHard(brownCards, sumBrownCard);
-            pushArrHard(blueCards, sumBlueCard);
-            pushArrNormal(brownCards,(allSumCard - arrEasiest.length));
+            pushArrEasiest(greenCards, sumGreenCard );
+            pushArrEasiest(brownCards, sumBrownCard);
+            pushArrEasiest(blueCards, sumBlueCard);
+            pushArrEasiest(brownCards,(allSumCard - arrEasiest.length));
         }
        /*  console.log(arrEasiest); */
     });
