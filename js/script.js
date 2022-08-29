@@ -134,7 +134,19 @@ let firstStageArr = []; // таблица
 let secondStageArr = []; // таблица
 let thirdStageArr = []; // таблица
 
+let sumFirstStage = 0;
+let sumSecondStage = 0;
+let sumThirdStage = 0;
+
+
 mainBtn.addEventListener('click', ()=> {
+    for(let i = 0; i < firstStage.length; i++){
+        sumFirstStage += +firstStage[i].innerHTML;
+        sumSecondStage += +secondStage[i].innerHTML;
+        sumThirdStage += +thirdStage[i].innerHTML;
+    }
+
+
   document.querySelector('.footer__wraper').classList.add('activ__visibil');
   mixTable(); // таблица
   mainBtn.setAttribute('disabled', 'false');
@@ -238,36 +250,95 @@ function getStage(arr, stage){
     stage.innerHTML = `${+stage.innerHTML - 1}`;
 }
 
-function cardToInner(){ // таблица    
-if(+firstStage[firstStageArr[0]].innerHTML > 0){
-getStage(arrEasiest, firstStage[firstStageArr[0]] );
-}else if(+firstStage[firstStageArr[1]].innerHTML > 0){
-getStage(arrEasiest, firstStage[firstStageArr[1]] );
-}else if(+firstStage[firstStageArr[2]].innerHTML > 0){
-getStage(arrEasiest, firstStage[firstStageArr[2]] );
-}else if(+secondStage[secondStageArr[0]].innerHTML > 0){
-getStage(arrEasiest, secondStage[secondStageArr[0]] );
-}else if(+secondStage[secondStageArr[1]].innerHTML > 0){
-getStage(arrEasiest, secondStage[secondStageArr[1]] );
-}else if(+secondStage[secondStageArr[2]].innerHTML > 0){
-getStage(arrEasiest, secondStage[secondStageArr[2]] );
-}else if(+thirdStage[thirdStageArr[0]].innerHTML > 0){
-getStage(arrEasiest, thirdStage[thirdStageArr[0]] );
-}else if(+thirdStage[thirdStageArr[1]].innerHTML > 0){
-getStage(arrEasiest, thirdStage[thirdStageArr[1]] );
-}else if(+thirdStage[thirdStageArr[2]].innerHTML > 0){
-getStage(arrEasiest, thirdStage[thirdStageArr[2]] );
-}
-if(arrEasiest.length === 0){
-    resetVariables();
-    footerWraper.classList.remove('activ__visibil');
-    mainBtn.style.outline = 'none';
-    location.reload();
-}
-}
- mythicCardWrapper.addEventListener('click', ()=> {
+ mythicCardWrapper.addEventListener('click', function(){
     randomCardImg.classList.remove('activ__unit');
-    cardToInner(); // таблица
+
+    if(sumFirstStage > 0){
+        shuffle(arrEasiest);
+        shuffle(arrEasiest);
+        for(let i = 0; i < arrEasiest.length; i++){
+                if(arrEasiest[i].color === firstStage[firstStageArr[0]].classList[1] &&
+                    +firstStage[firstStageArr[0]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    firstStage[firstStageArr[0]].innerHTML = `${+firstStage[firstStageArr[0]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === firstStage[firstStageArr[1]].classList[1]&&
+                    +firstStage[firstStageArr[1]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    firstStage[firstStageArr[1]].innerHTML = `${+firstStage[firstStageArr[1]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === firstStage[firstStageArr[2]].classList[1]&&
+                    +firstStage[firstStageArr[2]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    firstStage[firstStageArr[2]].innerHTML = `${+firstStage[firstStageArr[2]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }
+        }
+            sumFirstStage--;
+    }
+    if(sumSecondStage > 0){
+        for(let i = 0; i < arrEasiest.length; i++){
+                if(arrEasiest[i].color === secondStage[secondStageArr[0]].classList[1] &&
+                    +secondStage[secondStageArr[0]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    secondStage[secondStageArr[0]].innerHTML = `${+secondStage[secondStageArr[0]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === secondStage[secondStageArr[1]].classList[1]&&
+                    +secondStage[secondStageArr[1]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    secondStage[secondStageArr[1]].innerHTML = `${+secondStage[secondStageArr[1]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === secondStage[secondStageArr[2]].classList[1]&&
+                    +secondStage[secondStageArr[2]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    secondStage[secondStageArr[2]].innerHTML = `${+secondStage[secondStageArr[2]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }
+        }
+            sumSecondStage--;
+    }
+
+    if(sumThirdStage > 0){
+        for(let i = 0; i < arrEasiest.length; i++){
+                if(arrEasiest[i].color === thirdStage[thirdStageArr[0]].classList[1] &&
+                    +thirdStage[thirdStageArr[0]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    thirdStage[thirdStageArr[0]].innerHTML = `${+thirdStage[thirdStageArr[0]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === thirdStage[thirdStageArr[1]].classList[1]&&
+                    +thirdStage[thirdStageArr[1]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    thirdStage[thirdStageArr[1]].innerHTML = `${+thirdStage[thirdStageArr[1]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }else if(arrEasiest[i].color === thirdStage[thirdStageArr[2]].classList[1]&&
+                    +thirdStage[thirdStageArr[2]].innerHTML > 0){
+                    randomCardImg.src = `assets/MythicCards/${arrEasiest[i].color}/${arrEasiest[i].id}.png`;
+                    thirdStage[thirdStageArr[2]].innerHTML = `${+thirdStage[thirdStageArr[2]].innerHTML - 1}`;
+                    arrEasiest.splice(i,1);
+                    return;
+                }
+        }
+        sumThirdStage--;
+
+        if(arrEasiest.length === 0){
+            resetVariables();
+            footerWraper.classList.remove('activ__visibil');
+            mainBtn.style.outline = 'none';
+            location.reload();
+        }
+    }
+
+
+    
+    /* console.log(sumFirstStage); */
  });
 
 console.log(`
